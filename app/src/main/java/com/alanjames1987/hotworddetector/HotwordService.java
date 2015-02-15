@@ -41,13 +41,15 @@ public class HotwordService extends VoiceInteractionService {
 
         Toast.makeText(ctx, "onReady", Toast.LENGTH_LONG).show();
 
-        createAlwaysOnHotwordDetector("google", locale, callback);
+        hotwordDetector = createAlwaysOnHotwordDetector("google", locale, callback);
 
     }
 
     Context ctx;
 
     Locale locale = new Locale("nl-el");
+
+    AlwaysOnHotwordDetector hotwordDetector;
 
     Callback callback = new Callback() {
 
